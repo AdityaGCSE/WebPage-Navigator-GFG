@@ -49,8 +49,11 @@ def insert_page():
     ''')
     alert = driver.switch_to.alert
     input_text = alert.text
-    while input_text=='Enter URL :':
-        input_text = alert.text
+    try:
+        while input_text=='Enter URL :':
+            input_text = alert.text
+    except:
+        pass
     input_text = input_text[:-23]
     if input_text:
         with open('gfg_java.txt', 'r') as file:
@@ -80,15 +83,17 @@ def go_to_page():
             else
                 alert('Try again!');  
         }
-        else 
-        {
+        else {
             alert('Try again!');
         }
     ''')
     alert = driver.switch_to.alert
     input_text = alert.text
-    while input_text=='Go To Page No :':
-        input_text = alert.text
+    try:
+        while input_text=='Go To Page No :':
+            input_text = alert.text
+    except:
+        pass
     input_text = input_text[14:]
     if input_text:
         try:
